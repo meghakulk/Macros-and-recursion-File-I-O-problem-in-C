@@ -1,0 +1,29 @@
+OUTPUT OF THE PROGRAM : I/P: num =0
+                             bit_pos = 2
+                         o/p : After setting the bit 2: 4
+                               After clearing the bit 2: 0
+                               After togglingbit 2: 4
+#include<stdio.h>
+//defining macros
+#define SETBIT(n,k)   ((n)| (1<<(k)))
+#define CLEARBIT(n,k) ((n) & ~(1<<(k)))
+#define TOGGLEBIT(n,k) ((n) ^ (1<<(k)))
+
+int main()
+{
+int num =0;     
+int bit_pos = 2;
+
+num = SETBIT(num, bit_pos);
+printf("After setting the bit %d: %d\n",bit_pos,num);
+
+//For clearing the bit
+num = CLEARBIT(num, bit_pos);
+printf("After clearing the bit %d: %d\n",bit_pos,num);
+
+//Toggling the bit
+num = TOGGLEBITT(num , bit_pos);
+printf("After togglingbit %d:%d\n",bit_pos,num);
+
+return 0;
+}
