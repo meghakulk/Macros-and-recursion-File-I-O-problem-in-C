@@ -1,0 +1,19 @@
+SWAPPING THE TWO NUMBERS USING MACROS: I/P : 1 2
+                                       O/P : 2 1
+#include <stdio.h>
+
+// Defining macros for swapping two numbers
+#define SWAP(a, b) { int temp = a; a = b; b = temp; }
+
+int main() {
+    int n1, n2;
+
+    printf("Enter the two numbers (separated by a space): ");
+    scanf("%d %d", &n1, &n2);
+
+    SWAP(n1, n2);
+
+    printf("Swapped numbers are: %d %d\n", n1, n2);
+
+    return 0;
+}
