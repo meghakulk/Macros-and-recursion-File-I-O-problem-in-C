@@ -1,0 +1,41 @@
+Run the program in bash:  gcc file_operations.c -o file_operations
+                          ./file_operations
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+FILE *file;
+char buffer[100];
+
+//Create and write to the files 
+file = fopen("text.txt","w");
+if(file == NULL)
+{
+printf("Error while opening the file!\n");
+return 1;
+}
+fprintf(file, "Hello Im using bash!");
+fprintf(file, "It contains a few lines of text for demonstration.\n");
+fprintf(file, "This is the third line of the file.\n");
+
+fclose(file);
+//Read and print content of the file
+file = fopen("text.txt","r");
+if(file == NULL)
+{
+printf("Error while opening the file!\n");
+return 1;
+}
+printf("Contents of teext.txt:\n");
+while(fgets(buffer,sizeof(buffer),file) != NULL)
+{
+printf("%s",buffer);
+}
+fclose(file);
+
+return 0;
+}
+
+
+
